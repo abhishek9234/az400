@@ -23,3 +23,8 @@ steps:
     backendAzureRmStorageAccountName: 'terraform0tfstate0'
     backendAzureRmContainerName: 'tfstate'
     backendAzureRmKey: 'tf/terraform.tfstate'
+- task: TerraformTaskV3@3
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    environmentServiceNameAzureRM: 'Pay-As-You-Go (8812071c-9aa5-4b3b-ac8f-eef69e256968)'
