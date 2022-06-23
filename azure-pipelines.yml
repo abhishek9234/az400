@@ -14,6 +14,7 @@ steps:
   inputs:
     terraformVersion: 'latest'
 - task: TerraformTaskV3@3
+  displayName: terraform init
   inputs:
     provider: 'azurerm'
     command: 'init'
@@ -23,11 +24,13 @@ steps:
     backendAzureRmContainerName: 'tfstate'
     backendAzureRmKey: 'tf/terraform.tfstate'
 - task: TerraformTaskV3@3
+  displayName: terraform plan
   inputs:
     provider: 'azurerm'
     command: 'plan'
     environmentServiceNameAzureRM: 'Pay-As-You-Go (8812071c-9aa5-4b3b-ac8f-eef69e256968)'
 - task: TerraformTaskV3@3
+  displayName: terraform apply
   inputs:
     provider: 'azurerm'
     command: 'apply'
